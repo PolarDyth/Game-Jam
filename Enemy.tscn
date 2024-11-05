@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2md6vkf1sra"]
+
+[ext_resource type="Script" path="res://scripts/player/health/HealthSystem.cs" id="1_acedt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syhe2"]
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("1_acedt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_syhe2")
