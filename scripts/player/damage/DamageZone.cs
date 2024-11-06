@@ -9,7 +9,7 @@ public partial class DamageZone : Area2D
 		healthSystem = GetNode<HealthSystem>("/root/Player/HealthSystem");
 		GD.Print("DamageZone body_entered");
 
-		healthSystem.Health.set(healthSystem.Health.get() - 1); 
+		// healthSystem.Health.set(healthSystem.Health.get() - 1); 
 
 
 	}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8wm852ahk8lx"]
+[gd_scene load_steps=10 format=3 uid="uid://crd8dbyoklrfu"]
 
 [ext_resource type="Script" path="res://scripts/player/Player.cs" id="1_lqidq"]
 [ext_resource type="Script" path="res://scripts/player/health/HealthSystem.cs" id="1_s8aq4"]
@@ -55,6 +55,7 @@ frame_progress = 0.189159
 
 [node name="HealthSystem" type="Node" parent="."]
 script = ExtResource("1_s8aq4")
+CurrentHealth = 50
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
