@@ -24,18 +24,19 @@ public partial class HealthSystem : Node
 	[Export]
 	public int Health
 	{
-		get 
+		get
 		{
 			return _health;
 		}
 		set
 		{
 			_health = value;
-			EmitSignal("HealthChangedEventManager", _health);
+			EmitSignal("HealthChangedEventHandler", _health);
+			GD.Print("Health changed to: " + _health);
 
 			if (_health <= 0)
 			{
-				EmitSignal("HealthDepletedEventManager");
+				EmitSignal("HealthDepletedEventHandler");
 			}
 		}
 	}
@@ -71,8 +72,11 @@ public partial class HealthSystem : Node
 
 	// Methods
 
-	public void _ready()
+	public void TakeDamage(int damage)
 	{
-
+		if (!_invincible)
+		{
+			_health -= damage;
+		}
 	}
 }
