@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventorySys" load_steps=2 format=3 uid="uid://cgh48ha68w1fd"]
+
+[ext_resource type="Script" path="res://Inventory/Inventory_item.gd" id="1_3bs1c"]
+
+[resource]
+script = ExtResource("1_3bs1c")
+name = "Prosthetic leg"
+lore = "An ancient relic from a tribe of Dravs."
+Desc = "Jump off walls"

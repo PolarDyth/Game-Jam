@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventorySys" load_steps=2 format=3 uid="uid://dqpndfmw1ricd"]
+
+[ext_resource type="Script" path="res://Inventory/Inventory_item.gd" id="1_6s0fj"]
+
+[resource]
+script = ExtResource("1_6s0fj")
+name = "Cute petal"
+lore = "The petal seems to radiate with pure evil?"
+Desc = "Dropped from the boss sunflower and allows the player to give it into the shopkeep to aquire the prosthetic leg."

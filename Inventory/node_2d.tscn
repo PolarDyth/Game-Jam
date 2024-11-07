@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgyp5x42awib2"]
+
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_vemx0"]
+[ext_resource type="Resource" uid="uid://baoosg57vt6fi" path="res://Inventory/Playerinventory.tres" id="2_rarol"]
+[ext_resource type="PackedScene" uid="uid://f7qwddhr08gh" path="res://Inventory/inv_ui.tscn" id="3_so1jl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_enp31"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_vemx0")
+Inv = ExtResource("2_rarol")
+
+[node name="Inv_UI" parent="CharacterBody2D" instance=ExtResource("3_so1jl")]
+offset_left = 352.0
+offset_top = -25.0
+offset_right = 392.0
+offset_bottom = 15.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_enp31")

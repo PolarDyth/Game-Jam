@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventorySys" load_steps=2 format=3 uid="uid://b7ahgpfpbhxdq"]
+
+[ext_resource type="Script" path="res://Inventory/Inventory_item.gd" id="1_vyyqi"]
+
+[resource]
+script = ExtResource("1_vyyqi")
+name = "Fragment of abyss"
+lore = "The abyss slowly gushes these out they may be useful."
+Desc = "Spawns in real world allows the player to enter the abyss"

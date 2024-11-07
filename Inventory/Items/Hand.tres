@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventorySys" load_steps=2 format=3 uid="uid://bop4vtdk1pn1d"]
+
+[ext_resource type="Script" path="res://Inventory/Inventory_item.gd" id="1_l8yya"]
+
+[resource]
+script = ExtResource("1_l8yya")
+name = "Plagued left hand"
+lore = "This decapitated hand still remains to move even after severed, possibly from the void."
+Desc = "Gives player second Hud slot"

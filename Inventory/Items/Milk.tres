@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventorySys" load_steps=2 format=3 uid="uid://cxcwupn3h670b"]
+
+[ext_resource type="Script" path="res://Inventory/Inventory_item.gd" id="1_fw00u"]
+
+[resource]
+script = ExtResource("1_fw00u")
+name = "Pilk"
+lore = "A sweet mix of milk and Ψΐȝțƾp"
+Desc = "Gives the user the option to get a secret ending"
