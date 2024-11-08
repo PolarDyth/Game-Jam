@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://c2md6vkf1sra"]
+[gd_scene load_steps=16 format=3 uid="uid://c2md6vkf1sra"]
 
 [ext_resource type="Texture2D" uid="uid://bbm2q6djhnnnr" path="res://assets/sprites/slime_green.png" id="1_6tip6"]
+[ext_resource type="Script" path="res://scenes/enemy.gd" id="1_ua3i0"]
 [ext_resource type="Script" path="res://scripts/player/damage/DamageZone.cs" id="3_v0kpt"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_uwntg"]
@@ -78,6 +79,7 @@ radius = 5.09902
 [node name="Slime" type="AnimatableBody2D"]
 position = Vector2(1, -11)
 physics_material_override = SubResource("PhysicsMaterial_uwntg")
+script = ExtResource("1_ua3i0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -1)

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqukbbijtuy12"]
+
+[ext_resource type="Script" path="res://scripts/player/hearts/HeartContainer.cs" id="1_vnsv5"]
+
+[node name="heartContainer" type="HBoxContainer"]
+custom_minimum_size = Vector2(14, 2)
+layout_direction = 2
+offset_right = 68.0
+offset_bottom = 40.0
+scale = Vector2(-1, 1)
+theme_override_constants/separation = 9
+script = ExtResource("1_vnsv5")

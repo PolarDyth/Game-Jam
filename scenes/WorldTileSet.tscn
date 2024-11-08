@@ -1,12 +1,12 @@
 [gd_scene load_steps=7 format=4 uid="uid://dk1od5i425kdr"]
 
-[ext_resource type="Texture2D" uid="uid://daqlm8kyje77t" path="res://assets/sprites/world_tileset.png" id="1_ej2w6"]
-[ext_resource type="PackedScene" uid="uid://crd8dbyoklrfu" path="res://scripts/player/Player.tscn" id="2_1bbhw"]
-[ext_resource type="Script" path="res://scripts/player/Player.cs" id="2_fkxv1"]
-[ext_resource type="PackedScene" path="res://Enemy.tscn" id="3_exhqg"]
+[ext_resource type="Texture2D" uid="uid://daqlm8kyje77t" path="res://assets/sprites/world_tileset.png" id="1_6qiw8"]
+[ext_resource type="Script" path="res://scenes/World.cs" id="2_hqi81"]
+[ext_resource type="PackedScene" uid="uid://c2md6vkf1sra" path="res://scenes/Enemy.tscn" id="3_72xhg"]
+[ext_resource type="PackedScene" uid="uid://crd8dbyoklrfu" path="res://scripts/player/Player.tscn" id="4_e87x1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uumjb"]
-texture = ExtResource("1_ej2w6")
+texture = ExtResource("1_6qiw8")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -155,13 +155,13 @@ texture = ExtResource("1_ej2w6")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_uumjb")
 
-[node name="TileMapLayer" type="TileMapLayer"]
+[node name="WorldTileSet" type="TileMapLayer"]
 position = Vector2(1, 0)
 tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAD+/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAD9/wAAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_13vk7")
-script = ExtResource("2_fkxv1")
+script = ExtResource("2_hqi81")
 
-[node name="Slime" parent="." instance=ExtResource("3_exhqg")]
+[node name="Slime" parent="." instance=ExtResource("3_72xhg")]
 position = Vector2(31, -10)
 
-[node name="Player" parent="." instance=ExtResource("2_1bbhw")]
+[node name="Player" parent="." instance=ExtResource("4_e87x1")]

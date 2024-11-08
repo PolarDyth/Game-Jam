@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://crd8dbyoklrfu"]
+[gd_scene load_steps=11 format=3 uid="uid://crd8dbyoklrfu"]
 
 [ext_resource type="Script" path="res://scripts/player/Player.cs" id="1_lqidq"]
 [ext_resource type="Script" path="res://scripts/player/health/HealthSystem.cs" id="1_s8aq4"]
 [ext_resource type="Texture2D" uid="uid://l6if1nf0uoxm" path="res://assets/sprites/knight.png" id="1_yuvxk"]
+[ext_resource type="PackedScene" uid="uid://cqukbbijtuy12" path="res://scripts/player/hearts/heartContainer.tscn" id="4_3od7c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2mr5n"]
 atlas = ExtResource("1_yuvxk")
@@ -55,7 +56,6 @@ frame_progress = 0.189159
 
 [node name="HealthSystem" type="Node" parent="."]
 script = ExtResource("1_s8aq4")
-CurrentHealth = 50
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
@@ -63,6 +63,11 @@ CurrentHealth = 50
 position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_n80tw")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-2, 1)
+[node name="playerCam" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
+
+[node name="heartContainer" parent="playerCam" instance=ExtResource("4_3od7c")]
+offset_left = 144.0
+offset_top = -81.0
+offset_right = 212.0
+offset_bottom = -41.0

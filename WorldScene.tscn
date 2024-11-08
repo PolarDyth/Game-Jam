@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbgvupbrfv5mb"]
+
+[ext_resource type="PackedScene" uid="uid://dk1od5i425kdr" path="res://scenes/WorldTileSet.tscn" id="1_bd3ej"]
+
+[node name="WorldScene" type="Node2D"]
+
+[node name="WorldTileSet" parent="." instance=ExtResource("1_bd3ej")]

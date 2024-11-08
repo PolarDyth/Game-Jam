@@ -8,10 +8,17 @@ public partial class HealthSystem : Node
 	// Fields
 	private int _health;
 	private bool _isInvulnerable;
-	private float _invulnerableTime = 1.0f;
-	private int _maxHealth = 20;
+	private float _invulnerableTime;
+	private int _maxHealth;
 	private int _healthRegen;
-	private float _healthRegenTickTime = 1.0f;
+	private float _healthRegenTickTime;
+
+	// Constructor
+	public HealthSystem(int health, int maxHealth, int healthRegen) {
+		_health = health;
+		_maxHealth = maxHealth;
+		_healthRegen = healthRegen;
+	}
 
 
 	public enum TYPES
@@ -31,7 +38,7 @@ public partial class HealthSystem : Node
 
 	[ExportGroup("Health Parameters")]
 	[Export]
-	public int MaxHealth { get { return _maxHealth; } set { _maxHealth = Mathf.Max(0, value); } }
+	public int MaxHealth { get => _maxHealth; set { _maxHealth = Mathf.Max(0, value); } }
 	[Export]
 	public int CurrentHealth { get { return _health; } set { _health = Mathf.Clamp(value, 0, _maxHealth); } }
 
@@ -58,7 +65,7 @@ public partial class HealthSystem : Node
 	public void Health(int amount, TYPES type = TYPES.HEALTH) 
 	{
 		amount = Mathf.Abs(amount);
-		CurrentHealth = Mathf.Min(_maxHealth, CurrentHealth + amount);I go
+		CurrentHealth = Mathf.Min(_maxHealth, CurrentHealth + amount);
 
 		EmitSignal(SignalName.HealthChanged, amount, (int)type);
 	}
