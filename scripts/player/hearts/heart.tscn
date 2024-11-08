@@ -1,0 +1,134 @@
+[gd_scene load_steps=18 format=3 uid="uid://h1n26iemyhwt"]
+
+[ext_resource type="Texture2D" uid="uid://4w7frg2wwu8q" path="res://assets/hearts/RedHealth.png" id="1_vcckb"]
+[ext_resource type="Script" path="res://scripts/player/hearts/heart_animation.gd" id="2_n5odb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5xjn"]
+atlas = ExtResource("1_vcckb")
+region = Rect2(0, 256, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1elbj"]
+atlas = ExtResource("1_vcckb")
+region = Rect2(63, 256, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sg663"]
+atlas = ExtResource("1_vcckb")
+region = Rect2(126, 256, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1u7y"]
+atlas = ExtResource("1_vcckb")
+region = Rect2(189, 256, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gdan"]
+atlas = ExtResource("1_vcckb")
+region = Rect2(252, 256, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkm5x"]
+atlas = ExtResource("1_vcckb")
+region = Rect2(315, 256, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aq21n"]
+atlas = ExtResource("1_vcckb")
+region = Rect2(0, 128, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqvvn"]
+atlas = ExtResource("1_vcckb")
+region = Rect2(63, 128, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ie6v2"]
+atlas = ExtResource("1_vcckb")
+region = Rect2(126, 128, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_be12m"]
+atlas = ExtResource("1_vcckb")
+region = Rect2(189, 128, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n8hq"]
+atlas = ExtResource("1_vcckb")
+region = Rect2(252, 128, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqqwn"]
+atlas = ExtResource("1_vcckb")
+region = Rect2(252, 128, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cp66n"]
+atlas = ExtResource("1_vcckb")
+region = Rect2(315, 128, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjtub"]
+atlas = ExtResource("1_vcckb")
+region = Rect2(0, 0, 63, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h0rba"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5xjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1elbj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sg663")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1u7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gdan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkm5x")
+}],
+"loop": false,
+"name": &"HEALTH_GAINED",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aq21n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqvvn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ie6v2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_be12m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n8hq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqqwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cp66n")
+}],
+"loop": false,
+"name": &"HEALTH_TAKEN",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjtub")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 5.0
+}]
+
+[node name="heart" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 22.0
+offset_bottom = 18.0
+
+[node name="heartAnimation" type="AnimatedSprite2D" parent="."]
+position = Vector2(-11, 9)
+sprite_frames = SubResource("SpriteFrames_h0rba")
+animation = &"HEALTH_GAINED"
+autoplay = "IDLE"
+frame = 5
+frame_progress = 1.0
+script = ExtResource("2_n5odb")

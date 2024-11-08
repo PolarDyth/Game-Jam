@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://dh61tvq3ugblc"]
+
+[ext_resource type="Texture2D" uid="uid://l6if1nf0uoxm" path="res://assets/sprites/knight.png" id="1_b1cqe"]
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_f5h24"]
+[ext_resource type="PackedScene" uid="uid://clw11548ctejj" path="res://scripts/player/hearts/heart_container.tscn" id="2_rap0i"]
+[ext_resource type="Script" path="res://scripts/player/health/health_system.gd" id="3_andnb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ytaa"]
+radius = 7.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oy2rb"]
+atlas = ExtResource("1_b1cqe")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_124j0"]
+atlas = ExtResource("1_b1cqe")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1sunc"]
+atlas = ExtResource("1_b1cqe")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64wsr"]
+atlas = ExtResource("1_b1cqe")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5j37t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oy2rb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_124j0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1sunc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64wsr")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 10.0
+}]
+
+[node name="player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_f5h24")
+
+[node name="Area2D" type="Area2D" parent="." groups=["player"]]
+
+[node name="hitbox" type="CollisionShape2D" parent="Area2D" groups=["player"]]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_1ytaa")
+
+[node name="playerAnimation" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_5j37t")
+animation = &"IDLE"
+autoplay = "IDLE"
+frame_progress = 0.470488
+
+[node name="playerCam" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="heart_container" parent="playerCam" instance=ExtResource("2_rap0i")]
+offset_left = -143.0
+offset_top = -80.0
+offset_right = 144.0
+offset_bottom = -59.0
+
+[node name="health_system" type="Node" parent="."]
+script = ExtResource("3_andnb")
+
+[node name="hitbox2" type="CollisionShape2D" parent="." groups=["player"]]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_1ytaa")
+
+[connection signal="health_changed" from="health_system" to="playerCam/heart_container" method="_on_health_system_health_changed"]
