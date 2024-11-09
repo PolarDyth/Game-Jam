@@ -246,7 +246,6 @@ shape = SubResource("RectangleShape2D_4g382")
 script = ExtResource("6_uddq1")
 
 [node name="apply_poison_10s" type="Area2D" parent="WorldTileSet"]
-position = Vector2(285, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldTileSet/apply_poison_10s"]
 position = Vector2(222, -10)

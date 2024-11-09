@@ -77,3 +77,4 @@ position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_1ytaa")
 
 [connection signal="health_changed" from="health_system" to="playerCam/heart_container" method="_on_health_system_health_changed"]
+[connection signal="poison_applied" from="health_system" to="playerCam/heart_container" method="_on_health_system_poison_applied"]

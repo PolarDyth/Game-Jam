@@ -1,7 +1,6 @@
 extends AnimatedSprite2D
 
 
-enum ANIMATION {HEALTH_TAKEN, HEALTH_GAINED}
 	
 
 # Called when the node enters the scene tree for the first time.
@@ -15,4 +14,4 @@ func _process(delta: float) -> void:
 
 func playerHeartAnimation(animation):
 	print(animation)
-	play(str(animation))
+	play(animation)
