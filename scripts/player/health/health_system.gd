@@ -25,7 +25,6 @@ signal poison_applied(timer: Time, poison_amount: float)
 
 var immortality_timer: Timer = null
 var poison_timer: Timer = null
-var is_poisoned: bool = false : set = set_is_poisoned, get = get_is_poisoned
 
 @onready var health: int = max_health : set = set_health, get = get_health
 #endregion
@@ -54,12 +53,6 @@ func set_poison(value: bool):
 func get_poison():
 	return poison
 
-func set_is_poisoned(value: bool):
-	is_poisoned = value
-
-func get_is_poisoned():
-	return is_poisoned
-
 func set_health(value: int):
 	if value < health and immortality:
 		return
@@ -80,10 +73,8 @@ func get_health():
 
 func set_temporary_poison(time: float, poison_amount: float):
 	
-	if is_poisoned:
+	if poison:
 		return
-	else:
-		is_poisoned = true
 	
 	if poison_timer == null:
 		poison_timer = Timer.new()
@@ -96,7 +87,6 @@ func set_temporary_poison(time: float, poison_amount: float):
 	print(poison_timer)
 	poison_timer.set_wait_time(time)
 	poison_timer.timeout.connect(set_poison.bind(false))
-	poison_timer.timeout.connect(set_is_poisoned.bind(false))
 	poison = true
 	poison_timer.start()
 	poison_applied.emit(poison_timer, poison_amount)
