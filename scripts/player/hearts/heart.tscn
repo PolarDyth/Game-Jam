@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://h1n26iemyhwt"]
+[gd_scene load_steps=31 format=3 uid="uid://h1n26iemyhwt"]
 
 [ext_resource type="Texture2D" uid="uid://4w7frg2wwu8q" path="res://assets/hearts/RedHealth.png" id="1_vcckb"]
+[ext_resource type="Texture2D" uid="uid://d4lmgk7fpe7t0" path="res://assets/hearts/PoisonHealth.png" id="2_1frdq"]
 [ext_resource type="Script" path="res://scripts/player/hearts/heart_animation.gd" id="2_n5odb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f5xjn"]
@@ -47,10 +48,6 @@ region = Rect2(189, 128, 63, 64)
 atlas = ExtResource("1_vcckb")
 region = Rect2(252, 128, 63, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qqqwn"]
-atlas = ExtResource("1_vcckb")
-region = Rect2(252, 128, 63, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_cp66n"]
 atlas = ExtResource("1_vcckb")
 region = Rect2(315, 128, 63, 64)
@@ -58,6 +55,58 @@ region = Rect2(315, 128, 63, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_jjtub"]
 atlas = ExtResource("1_vcckb")
 region = Rect2(0, 0, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4mdm"]
+atlas = ExtResource("2_1frdq")
+region = Rect2(0, 128, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epp64"]
+atlas = ExtResource("2_1frdq")
+region = Rect2(0, 256, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3iq5"]
+atlas = ExtResource("2_1frdq")
+region = Rect2(63, 256, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vs21t"]
+atlas = ExtResource("2_1frdq")
+region = Rect2(126, 256, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pr2am"]
+atlas = ExtResource("2_1frdq")
+region = Rect2(189, 256, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7o1x"]
+atlas = ExtResource("2_1frdq")
+region = Rect2(252, 256, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amssc"]
+atlas = ExtResource("2_1frdq")
+region = Rect2(315, 256, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddd42"]
+atlas = ExtResource("2_1frdq")
+region = Rect2(0, 128, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iiafu"]
+atlas = ExtResource("2_1frdq")
+region = Rect2(63, 128, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xewp"]
+atlas = ExtResource("2_1frdq")
+region = Rect2(126, 128, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmp1g"]
+atlas = ExtResource("2_1frdq")
+region = Rect2(189, 128, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owqs2"]
+atlas = ExtResource("2_1frdq")
+region = Rect2(189, 192, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xut7o"]
+atlas = ExtResource("2_1frdq")
+region = Rect2(315, 128, 63, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h0rba"]
 animations = [{
@@ -97,11 +146,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_be12m")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_2n8hq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qqqwn")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cp66n")
@@ -117,6 +163,60 @@ animations = [{
 "loop": true,
 "name": &"IDLE",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4mdm")
+}],
+"loop": false,
+"name": &"POISON",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epp64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3iq5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vs21t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pr2am")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7o1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amssc")
+}],
+"loop": false,
+"name": &"POISON_GAINED",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddd42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iiafu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xewp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmp1g")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_owqs2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xut7o")
+}],
+"loop": false,
+"name": &"POISON_TAKEN",
+"speed": 15.0
 }]
 
 [node name="heart" type="Panel"]
