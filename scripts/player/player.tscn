@@ -61,7 +61,9 @@ autoplay = "IDLE"
 frame_progress = 0.470488
 
 [node name="playerCam" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
+zoom = Vector2(0.7, 0.7)
+limit_bottom = 600
+position_smoothing_enabled = true
 
 [node name="heart_container" parent="playerCam" instance=ExtResource("2_rap0i")]
 offset_left = -143.0
