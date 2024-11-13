@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dh61tvq3ugblc"]
+[gd_scene load_steps=12 format=3 uid="uid://dh61tvq3ugblc"]
 
 [ext_resource type="Texture2D" uid="uid://l6if1nf0uoxm" path="res://assets/sprites/knight.png" id="1_b1cqe"]
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_f5h24"]
 [ext_resource type="PackedScene" uid="uid://clw11548ctejj" path="res://scripts/player/hearts/heart_container.tscn" id="2_rap0i"]
 [ext_resource type="Script" path="res://scripts/player/health/health_system.gd" id="3_andnb"]
+[ext_resource type="Script" path="res://scripts/player/player_cam.gd" id="3_nrx1j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ytaa"]
 radius = 7.0
@@ -65,6 +66,7 @@ zoom = Vector2(0.7, 0.7)
 limit_left = -33
 limit_bottom = 600
 position_smoothing_enabled = true
+script = ExtResource("3_nrx1j")
 
 [node name="heart_container" parent="playerCam" instance=ExtResource("2_rap0i")]
 offset_left = -143.0
