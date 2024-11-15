@@ -1,11 +1,28 @@
-[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://dfopjswn6urhc"]
+[gd_resource type="TileSet" load_steps=15 format=3 uid="uid://dfopjswn6urhc"]
 
+[ext_resource type="Texture2D" uid="uid://dtkhtavxfqpco" path="res://assets/SSW_VP1_v1.0/_PNG/Anim/Light2.png" id="1_5juca"]
 [ext_resource type="Texture2D" uid="uid://07ls3gcltd0q" path="res://assets/SET1/Decoratives.png" id="1_cqet5"]
 [ext_resource type="Texture2D" uid="uid://c4aglpkynsnrv" path="res://assets/SET1/anim/grass1.png" id="2_bt4i1"]
 [ext_resource type="Texture2D" uid="uid://du4p1di1ybvqy" path="res://assets/SET1/anim/grass2.png" id="3_2enm2"]
 [ext_resource type="Texture2D" uid="uid://cldi7ruo6vvh1" path="res://assets/SET1/anim/grass3.png" id="4_j2xxh"]
 [ext_resource type="Texture2D" uid="uid://de2tro6hqwbb0" path="res://assets/SET1/anim/plant1.png" id="5_2qi4d"]
 [ext_resource type="Texture2D" uid="uid://b281iey04uu8q" path="res://assets/SET1/MainLevBuild.png" id="6_7b0eb"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_teclf"]
+texture = ExtResource("1_5juca")
+0:2/size_in_atlas = Vector2i(2, 2)
+0:2/animation_columns = 4
+0:2/animation_speed = 7.0
+0:2/animation_mode = 1
+0:2/animation_frame_0/duration = 1.0
+0:2/animation_frame_1/duration = 1.0
+0:2/animation_frame_2/duration = 1.0
+0:2/animation_frame_3/duration = 1.0
+0:2/0 = 0
+0:1/size_in_atlas = Vector2i(2, 1)
+0:1/0 = 0
+0:0/size_in_atlas = Vector2i(2, 1)
+0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sxdo0"]
 texture = ExtResource("1_cqet5")
@@ -3898,3 +3915,4 @@ sources/3 = SubResource("TileSetAtlasSource_kboaf")
 sources/4 = SubResource("TileSetAtlasSource_u2a3o")
 sources/5 = SubResource("TileSetAtlasSource_g8hh6")
 sources/6 = SubResource("TileSetAtlasSource_qrdle")
+sources/0 = SubResource("TileSetAtlasSource_teclf")
